@@ -2,3 +2,4 @@ RewriteEngine on
 
 RewriteRule ^index$ index.php?page=index
 RewriteRule ^addMatelas$ index.php?page=addMatelas
+RewriteRule ^modifyMatelas$ index.php?page=modifyMatelas

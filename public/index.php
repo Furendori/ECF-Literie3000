@@ -20,6 +20,11 @@ $pages = array(
         "view" => "AddMatelasView",
         "controller" => "AddMatelasController"
     ),
+    "modifyMatelas" => array(
+        "model" => "ModifyMatelasModel",
+        "view" => "ModifyMatelasView",
+        "controller" => "ModifyMatelasController"
+    ),
 );
 
 $find = false;

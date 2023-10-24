@@ -1,23 +1,17 @@
 <?php
-error_reporting(E_ALL); 
-ini_set("display_errors", 1);
 if (!empty($_POST)) {
     $marque = trim(strip_tags($_POST["marque"]));
-    $nom = trim(strip_tags($_POST["nom"]));
+    $name = trim(strip_tags($_POST["name"]));
     $prix = trim(strip_tags($_POST["prix"]));
     $taille = trim(strip_tags($_POST["taille"]));
     $image = trim(strip_tags($_POST["image"]));
 
     $errors = [];
 
-    if (empty($nom)) {
-        $errors["nom"] = "Le nom du matelas est obligatoire";
-    }
-
     var_dump($_FILES);
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
-        $fileTmpPath = $_FILES["image"]["tmp_nom"];
-        $fileName = $_FILES["image"]["nom"];
+        $fileTmpPath = $_FILES["image"]["tmp_name"];
+        $fileName = $_FILES["image"]["name"];
         $fileType = $_FILES["image"]["type"];
 
         $fileNameArray = explode(".", $fileName);
@@ -40,15 +34,15 @@ if (!empty($_POST)) {
         $dsn = "mysql:host=localhost;dbname=literie3000";
         $db = new PDO($dsn, "root", "root");
 
-        $query = $db->prepare("INSERT INTO matelas (marque, nom, prix, taille, image) VALUES (:marque, :nom, :prix, :taille, :image)");
+        $query = $db->prepare("INSERT INTO matelas (marque, name, prix, taille, image) VALUES (:marque, :name, :prix, :taille, :image)");
         $query->bindParam(":marque", $marque);
-        $query->bindParam(":nom", $nom);
+        $query->bindParam(":name", $name);
         $query->bindParam(":prix", $prix);
         $query->bindParam(":taille", $taille);
         $query->bindParam(":image", $image);
 
         if ($query->execute()) {
-            header("Location: home.php");
+            header("Location: index.php");
         } else {
             var_dump($query->errorInfo());
         }
@@ -60,11 +54,11 @@ if (!empty($_POST)) {
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="inputName">Nom du matelas :</label>
-        <input type="text" id="inputName" name="name" value="<?= isset($nom) ? $nom : "" ?>">
+        <input type="text" id="inputName" name="name" value="<?= isset($name) ? $name : "" ?>">
         <?php
-        if (isset($errors["nom"])) {
+        if (isset($errors["name"])) {
         ?>
-            <span class="info-error"><?= $errors["nom"] ?></span>
+            <span class="info-error"><?= $errors["name"] ?></span>
         <?php
         }
         ?>

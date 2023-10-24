@@ -6,9 +6,10 @@ $db = new PDO($dsn, "root", "root");
 
 $query = $db->query("SELECT * FROM matelas");
 $matelas = $query->fetchAll(PDO::FETCH_ASSOC);
+
+include("./templates/header.php");
 ?>
 
-<img src="../images/logo.png" alt="">
 <div class="matelas-container">
     <?php
     foreach ($matelas as $matelasse) {
@@ -17,7 +18,7 @@ $matelas = $query->fetchAll(PDO::FETCH_ASSOC);
             <h2>
                 <img src="<?= $matelasse["image"] ?>" alt="">
                 <p><?= $matelasse["marque"] ?></p>
-                <p><?= $matelasse["nom"] ?></p>
+                <p><?= $matelasse["name"] ?></p>
                 <p><?= $matelasse["taille"] ?></p>
                 <p><?= $matelasse["prix"] ?>€</p>
             </h2>
