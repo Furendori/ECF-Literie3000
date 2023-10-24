@@ -15,6 +15,11 @@ $pages = array(
         "view" => "HomeView",
         "controller" => "HomeController"
     ),
+    "addMatelas" => array(
+        "model" => "AddMatelasModel",
+        "view" => "AddMatelasView",
+        "controller" => "AddMatelasController"
+    ),
 );
 
 $find = false;

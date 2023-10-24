@@ -1,2 +1,4 @@
 RewriteEngine on
 
+RewriteRule ^index$ index.php?page=index
+RewriteRule ^addMatelas$ index.php?page=addMatelas

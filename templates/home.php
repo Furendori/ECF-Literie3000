@@ -8,14 +8,18 @@ $query = $db->query("SELECT * FROM matelas");
 $matelas = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<h1>Nos matelas</h1>
+<img src="../images/logo.png" alt="">
 <div class="matelas-container">
     <?php
     foreach ($matelas as $matelasse) {
     ?>
         <div class="matelas">
             <h2>
-                <p><?= $matelasse["name"] ?></p>
+                <img src="<?= $matelasse["image"] ?>" alt="">
+                <p><?= $matelasse["marque"] ?></p>
+                <p><?= $matelasse["nom"] ?></p>
+                <p><?= $matelasse["taille"] ?></p>
+                <p><?= $matelasse["prix"] ?>€</p>
             </h2>
         </div>
     <?php
