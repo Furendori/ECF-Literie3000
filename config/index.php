@@ -1,5 +1,4 @@
 <?php
-// Définir des constantes pour stocker les infos de la bdd et les chemins vers différents dossiers
 define("DB_HOSTNAME", "localhost");
 define("DB_USERNAME", "root");
 define("DB_PASSWORD", "root");

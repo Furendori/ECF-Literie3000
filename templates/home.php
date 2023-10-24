@@ -1,5 +1,7 @@
 <?php
-$dsn = "mysql:host=localhost;dbname=literie300";
+error_reporting(E_ALL); 
+ini_set("display_errors", 1);
+$dsn = "mysql:host=localhost;dbname=literie3000";
 $db = new PDO($dsn, "root", "root");
 
 $query = $db->query("SELECT * FROM matelas");
