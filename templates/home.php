@@ -21,6 +21,7 @@ include("./templates/header.php");
                 <p><?= $matelasse["name"] ?></p>
                 <p><?= $matelasse["taille"] ?></p>
                 <p><?= $matelasse["prix"] ?>€</p>
+                <a href="modifyMatelas">Modifier les infos</a>
             </h2>
         </div>
     <?php
