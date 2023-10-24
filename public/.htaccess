@@ -1,0 +1,6 @@
+# Activer le module de réécriture d'URL
+RewriteEngine on
+
+# Lister les différentes règles de réécriture
+RewriteRule ^user/([0-9]+)$ index.php?page=user&id=$1
+RewriteRule ^register$ index.php?page=register.php

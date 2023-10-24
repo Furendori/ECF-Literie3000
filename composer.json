@@ -1,0 +1,17 @@
+{
+    "name": "julian/ecf-literie3000",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Julian\\EcfLiterie3000\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Julian Brasseur",
+            "email": "brasseurjulian2@gmail.com"
+        }
+    ]
+}
